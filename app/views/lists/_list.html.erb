@@ -1,0 +1,18 @@
+<%= link_to list_path(list), style: "text-decoration: none; color: inherit;" do %>
+  <div class="card mb-3 border-0">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <%= image_tag "https://m.media-amazon.com/images/M/MV5BMzhkMzYyYzYtMDJmNi00MzZkLTkyYzQtNGUzOGQ5NjMxZTU0XkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_UX192_CR0%2C0%2C192%2C284_AL_.jpg", alt: "Le Wagon", class: "img-fluid rounded-start" %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= list.name %></h5>
+          <p class="card-text">
+            <span class="badge rounded-pill text-bg-info card-text"><%= list.movies.count %> movie<%= "s" if list.movies.count == 0  %> added</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<hr>

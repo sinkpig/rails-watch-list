@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center g-0">
+    <div class="col-6">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 border-bottom" style="background: #EEEEEE;">
+            <h3>Your lists</h3>
+            <small class="fw-bold"><i class="fa-solid fa-lock me-2"></i>PRIVATE</small>
+            <span>Edit</span>
+            <span>Share</span>
+          </div>
+          <div class="col-12 bg-light">
+            <% @lists.each do |list| %>
+              <%= render 'list', list: list %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4" style="background: #F0F0F0;">
+      <%= link_to new_list_path, class: "btn btn-info" do %>
+        <i class="fa-solid fa-list"></i>
+        Create a movie list
+      <% end %>
+    </div>
+  </div>
+</div>

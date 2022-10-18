@@ -1,0 +1,37 @@
+<div class="navbar navbar-expand-sm bg-dark navbar-lewagon">
+  <div class="container">
+    <%= link_to lists_path, class: "navbar-brand" do %>
+      <%= image_tag "logo.png", alt: "IMDB" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <form class="input-group">
+            <input type="text" class="form-control bg-light border-0" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-light border-0" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass text-muted"></i></button>
+          </form>
+        </li>
+        <li class="nav-item">
+          <span></span>
+        </li>
+        <li class="nav-item">
+          <%= link_to lists_path, class: "nav-link text-white" do %>
+            <i class="fa-regular fa-bookmark text-muted"></i>
+            My lists <span class="badge rounded-pill text-dark bg-info"><%= List.all.count %></span>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to new_list_path, class: "nav-link text-white" do %>
+            New lists
+            <i class="fa-solid fa-plus text-muted"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

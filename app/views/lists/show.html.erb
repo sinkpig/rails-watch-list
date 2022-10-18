@@ -1,0 +1,18 @@
+<div class="container py-5 bg-light">
+  <div class="d-flex justify-content-between align-items-end px-5">
+    <div>
+      <h4 class="text-primary mb-0">List</h4>
+      <h1><%= @list.name %></h1>
+    </div>
+    <%= link_to new_list_bookmark_path(@list), class: "btn btn-info" do %>
+      <i class="fa-solid fa-film"></i>
+      Add a Movie
+    <% end %>
+  </div>
+  <hr>
+  <div class="row justify-content-center">
+    <% @list.movies.each do |movie| %>
+      <%= render 'movie', movie: movie %>
+    <% end %>
+  </div>
+</div>

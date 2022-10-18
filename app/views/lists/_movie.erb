@@ -1,0 +1,22 @@
+<div class="col-3">
+  <div class="card mb-3 border-0 h-100">
+    <%= image_tag movie.poster_url, alt: "Le Wagon", class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title fw-bold"><%= movie.title %></h5>
+      <span class="card-text badge rounded-pill text-bg-info card-text text-white mb-3">
+        <% movie.rating.times do %>
+          <i class="fa-solid fa-star"></i>
+        <% end %>
+        <% (5 - movie.rating).times do %>
+          <i class="fa-regular fa-star"></i>
+        <% end %>
+      </span>
+      <p><%= movie.overview.first(65) %>...</p>
+      <small class="text-muted">Added on <%= @list.created_at.strftime("%d %b %Y") %></small>
+      <i class="fa-regular fa-trash-can text-danger"></i>
+      <%# <%= link_to bookmark_path(@bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" do %>
+        <%# <i class="fa-regular fa-trash-can"></i>
+      <%# <% end %>
+    </div>
+  </div>
+</div>
