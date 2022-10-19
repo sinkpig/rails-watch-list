@@ -12,11 +12,13 @@
         <% end %>
       </span>
       <p><%= movie.overview.first(65) %>...</p>
-      <small class="text-muted">Added on <%= @list.created_at.strftime("%d %b %Y") %></small>
-      <i class="fa-regular fa-trash-can text-danger"></i>
-      <%# <%= link_to bookmark_path(@bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger" do %>
-        <%# <i class="fa-regular fa-trash-can"></i>
-      <%# <% end %>
+      <%# <small class="text-muted">Added on
+        <%= @list.created_at.strftime("%d %b %Y") %>
+      <%# </small> %>
+      <small class="text-muted"><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %> <i class="fa-solid fa-quote-right"></i></small>
+      <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger float-end" do %>
+        <i class="fa-regular fa-trash-can"></i>
+      <% end %>
     </div>
   </div>
 </div>
