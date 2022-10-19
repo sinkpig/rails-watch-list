@@ -2,7 +2,7 @@
   <div class="card mb-3 border-0">
     <div class="row g-0">
       <div class="col-md-4">
-        <%= image_tag "https://m.media-amazon.com/images/M/MV5BMzhkMzYyYzYtMDJmNi00MzZkLTkyYzQtNGUzOGQ5NjMxZTU0XkEyXkFqcGdeQXVyNjc3MjQzNTI@._V1_UX192_CR0%2C0%2C192%2C284_AL_.jpg", alt: "Le Wagon", class: "img-fluid rounded-start" %>
+        <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid rounded-start" %>
       </div>
       <div class="col-md-8">
         <div class="card-body">
