@@ -1,18 +1,21 @@
-<%= link_to list_path(list), style: "text-decoration: none; color: inherit;" do %>
-  <div class="card mb-3 border-0">
-    <div class="row g-0">
-      <div class="col-md-4">
+<div class="card mb-3 border-0">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= link_to list_path(list), style: "text-decoration: none; color: inherit;" do %>
         <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill, class: "img-fluid rounded-start" %>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><%= list.name %></h5>
-          <p class="card-text">
-            <span class="badge rounded-pill text-bg-info card-text"><%= list.movies.count %> movie<%= "s" if list.movies.count == 0  %> added</span>
-          </p>
-        </div>
+      <% end %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <%= link_to list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-danger float-end" do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
+        <h5 class="card-title"><%= list.name %></h5>
+        <p class="card-text">
+          <span class="badge rounded-pill text-bg-info card-text"><%= list.movies.count %> movie<%= "s" if list.movies.count == 0  %> added</span>
+        </p>
       </div>
     </div>
   </div>
-<% end %>
+</div>
 <hr>
